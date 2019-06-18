@@ -23,7 +23,7 @@ Current releases are listed here:
 
 import json
 import os
-from io import StringIO
+from io import BytesIO
 import sys
 from urllib.request import urlopen
 import zipfile
@@ -77,7 +77,7 @@ def main(argv):
     sdk_urls = get_sdk_urls(sdk_versions)
     for sdk_url in sdk_urls:
         try:
-            sdk_contents = StringIO(urlopen(sdk_url).read())
+            sdk_contents = BytesIO(urlopen(sdk_url).read())
             break
         except:
             pass
