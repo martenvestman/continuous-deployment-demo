@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2015 Google Inc. All rights reserved.
+u# Copyright 2015 Google Inc. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ def main(argv):
     sdk_urls = get_sdk_urls(sdk_versions)
     for sdk_url in sdk_urls:
         try:
-            sdk_contents = StringIO.StringIO(urllib2.urlopen(sdk_url).read())
+            sdk_contents = StringIO.StringIO(urlopen(sdk_url).read())
             break
         except:
             pass
