@@ -52,7 +52,7 @@ def _version_tuple(v):
 def get_sdk_urls(sdk_versions):
     python_releases = [
         v for v in sdk_versions
-        if v['name'].startswith('featured/featured/GoogleAppEngine')]
+        if v['name'].startswith('featured/google_appengine')]
     current_releases = sorted(
         python_releases, key=_version_tuple, reverse=True)
     return [release['mediaLink'] for release in current_releases]
@@ -66,7 +66,7 @@ def main(argv):
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
 
-    if os.path.exists(os.path.join(dest_dir, 'GoogleAppEngine')):
+    if os.path.exists(os.path.join(dest_dir, 'google_appengine')):
         print('GAE SDK already installed at {}, exiting.'.format(dest_dir))
         return 0
 
