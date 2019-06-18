@@ -77,7 +77,7 @@ def main(argv):
     sdk_urls = get_sdk_urls(sdk_versions)
     for sdk_url in sdk_urls:
         try:
-            sdk_contents = StringIO.StringIO(urlopen(sdk_url).read())
+            sdk_contents = StringIO(urlopen(sdk_url).read())
             break
         except:
             pass
