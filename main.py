@@ -7,8 +7,8 @@
 # or implied. See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-import urllib2
+import urllib.request
+import urllib.error
 import json
 from google.appengine.ext import vendor
 vendor.add('lib')
@@ -22,10 +22,10 @@ from api_key import key
 @app.route('/get_author/<title>')
 def get_author(title):
     host = 'https://www.googleapis.com/books/v1/volumes?q={}&key={}&country=US'.format(title, key)
-    request = urllib2.Request(host)
+    request = urllib.request.Request(host)
     try:
-        response = urllib2.urlopen(request)
-    except urllib2.HTTPError, error:
+        response = urllib.request.urlopen(request)
+    except urllib.error.HTTPError, error:
         contents = error.read()
         print ('Received error from Books API {}'.format(contents))
         return str(contents)
