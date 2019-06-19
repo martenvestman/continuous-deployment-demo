@@ -14,8 +14,8 @@ import logging
 HOST='http://socialplatform-242308.appspot.com'
 
 # [START e2e]
-response = urllib.request.urlopen("{}/get_author/ulysses".format(HOST))
-html = response.read()
+# response = urlopen("{}/get_author/ulysses".format(HOST))
+# html = response.read()
 pass
 # assert(html == "James Joyce")
 # [END e2e]
